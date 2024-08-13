@@ -20,3 +20,21 @@ Print a message:
 September 2016.".
 """
 
+phone_numbers = {}
+
+for i in calls:
+  if i[0] in phone_numbers:
+    phone_numbers[i[0]] = int(phone_numbers[i[0]]) + int(i[3])
+  else:
+    phone_numbers[i[0]] = int(i[3])
+for i in calls:
+  if i[1] in phone_numbers:
+    phone_numbers[i[1]] = int(phone_numbers[i[1]]) + int(i[3])
+  else:
+    phone_numbers[i[1]] = int(i[3])
+
+max_phone_number = max(phone_numbers, key = phone_numbers.get)
+max_time = max(phone_numbers.values())
+
+print(f"<{max_phone_number}> spent the longest time, <{max_time}> seconds, on the phone during September 2016.")
+
