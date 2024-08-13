@@ -20,13 +20,19 @@ Print a message:
 """
 phone_number = []
 for i in calls:
-  if i[0] not in phone_number:
+  if i[0] not in phone_number and i[1] not in phone_number:
+    phone_number.append(i[0])
+    phone_number.append(i[1])
+  elif i[0] not in phone_number:
     phone_number.append(i[0])
   elif i[1] not in phone_number:
     phone_number.append(i[1])
 
 for i in texts:
-  if i[0] not in phone_number:
+  if i[0] not in phone_number and i[1] not in phone_number:
+    phone_number.append(i[0])
+    phone_number.append(i[1])
+  elif i[0] not in phone_number:
     phone_number.append(i[0])
   elif i[1] not in phone_number:
     phone_number.append(i[1])
