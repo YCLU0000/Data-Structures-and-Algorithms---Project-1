@@ -73,3 +73,6 @@ for call in calls:
 percentage = round(count_to_B/count_from_B*100, 2)
 
 print(f"<{percentage}> percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
+"""
+Running time: O(n)
+"""
