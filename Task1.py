@@ -45,3 +45,7 @@ for i in texts:
 
 count = len(phone_number)
 print(f"There are <{count}> different telephone numbers in the records.")
+
+"""
+Running time: O(n)
+"""
