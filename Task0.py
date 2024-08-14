@@ -35,3 +35,7 @@ time = last_call[2]
 during = last_call[3]
 
 print(f"Last record of calls, <{incoming_number}> calls <{answering_number}> at time <{time}>, lasting <{during}> seconds")
+
+"""
+Running time: O(1)
+"""
