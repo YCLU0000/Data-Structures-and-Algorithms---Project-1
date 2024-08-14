@@ -38,3 +38,6 @@ max_time = max(phone_numbers.values())
 
 print(f"<{max_phone_number}> spent the longest time, <{max_time}> seconds, on the phone during September 2016.")
 
+"""
+Running time: O(n)
+"""
