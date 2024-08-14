@@ -36,3 +36,7 @@ for call in calls:
 print("These numbers could be telemarketers: ")
 for telephone in telephone_marketing:
       print(f"<{telephone}>")
+
+"""
+Running time: O(n)
+"""
