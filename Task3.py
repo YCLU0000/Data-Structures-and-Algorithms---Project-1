@@ -50,10 +50,13 @@ The percentage should have 2 decimal digits
 codes = []
 
 for call in calls:
-  if call[0][0:5] == "(080)" and call[0] not in codes:
-    codes.append(call[0])
-  elif call[1][0:5] == "(080)" and call[1] not in codes:
-    codes.append(call[1])
+  if call[0][0:5] == "(080)":
+    if call[1][0:5] == "(080)" and call[1][0:5] not in codes:
+      codes.append(call[1][0:5])
+    elif call[1][0:3] == "140" and call[1][0:3] not in codes:
+      codes.append(call[1][0:3])
+    elif (call[1][0] == "7" or call[1][0] == "8" or call[1][0] == "9") and call[1][0:4] not in codes:
+      codes.append(call[1][0:4])
 
 codes.sort()
 
