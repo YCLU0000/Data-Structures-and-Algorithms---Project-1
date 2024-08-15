@@ -41,5 +41,5 @@ for telephone in telephone_marketing:
       print(f"<{telephone}>")
 
 """
-Running time: O(n^2)
+Running time: O(n log n)
 """
