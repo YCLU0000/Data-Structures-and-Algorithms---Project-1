@@ -46,19 +46,21 @@ The percentage should have 2 decimal digits
 """
 
 
+
 #Part A:
-codes = []
+codes = set()
 
 for call in calls:
   if call[0][0:5] == "(080)":
-    if call[1][0:5] == "(080)" and call[1][0:5] not in codes:
-      codes.append(call[1][0:5])
-    elif call[1][0:3] == "140" and call[1][0:3] not in codes:
-      codes.append(call[1][0:3])
-    elif (call[1][0] == "7" or call[1][0] == "8" or call[1][0] == "9") and call[1][0:4] not in codes:
-      codes.append(call[1][0:4])
+    if "(" in call[1]:
+      code_len = call[1].index(")")
+      codes.add(call[1][0:code_len+1])
+    elif call[1][0:3] == "140":
+      codes.add(call[1][0:3])
+    elif (call[1][0] == "7" or call[1][0] == "8" or call[1][0] == "9"):
+      codes.add(call[1][0:4])
 
-codes.sort()
+list(codes).sort()
 
 print("The numbers called by people in Bangalore have codes:")
 for code in codes:
@@ -77,5 +79,5 @@ percentage = round(count_to_B/count_from_B*100, 2)
 
 print(f"<{percentage}> percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
 """
-Running time: O(n)
+Running time: O(n) for part A and B
 """
